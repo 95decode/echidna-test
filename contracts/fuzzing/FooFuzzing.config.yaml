@@ -1,7 +1,9 @@
-# checkAsserts: true
 coverage: true
 codeSize: 0x60000
 corpusDir: echidna_foo_corpus
 seqLen: 10
 testLimit: 100000
-timeout: 600 # 10 minutes
+timeout: 3600 # 60 minutes
+prefix: "hexlant_"
+# testMode: assertion
+# checkAsserts: true
