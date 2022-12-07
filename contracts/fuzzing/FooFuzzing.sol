@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity 0.8.16;
 
-import "../Foo.sol";
+import { Foo } from "../Foo.sol";
 
 contract FooFuzzing {
     Foo internal foo;
@@ -11,14 +11,18 @@ contract FooFuzzing {
         foo = new Foo();
     }
 
-    function deposit(uint256 amount) public {
-        foo.deposit(amount);
+    function add(uint256 amount) public {
+        foo.add(amount);
+    }
+
+    function sub(uint256 amount) public {
+        foo.sub(amount);
     }
 
     /**
-     * @return false when `balance(address(this)) < MAX` (for testing echidna)
+     * @return false when `status(address(this)) < MAX` (for testing echidna)
      */
-    function hexlant_deposit() public view returns (bool) {
-        return foo.balance(address(this)) < MAX;
+    function hexlant_check() public view returns (bool) {
+        return foo.check(address(this)) <= MAX;
     }
 }
