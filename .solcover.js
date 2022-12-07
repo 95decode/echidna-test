@@ -1,3 +1,3 @@
 module.exports = {
-    skipFiles : ['Lock.sol']
+    skipFiles : ['./fuzzing/FooFuzzing.sol']
 }
