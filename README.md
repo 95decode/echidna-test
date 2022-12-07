@@ -15,5 +15,5 @@ npx hardhat coverage
 
 ```shell
 echidna-test . --contract FooFuzzing --config ./contracts/fuzzing/FooFuzzing.config.yaml
-slither . 
+slither ./contracts/Foo.sol
 ```
